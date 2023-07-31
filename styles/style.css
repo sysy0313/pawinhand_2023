@@ -27,7 +27,8 @@ header .m_nav_open {
     background:cadetblue;
     position:absolute; top:100px;
     width:100%; padding:43px 0;
-    display:none;
+    display:none; 
+    z-index:10;
 }
 header .m_nav_open #close {position:absolute; right:15px; top:15px;background:none;}
 header .m_nav_open #close .fa-xmark{font-size:24px;}
@@ -40,14 +41,19 @@ header .m_nav_open ul li a {font-size:1.333rem; letter-spacing:-0.02em;}
 /* swiper플러그인의 정식명칭 클래스는 웹 페이지 1장에서 swiper가 2개 이상 들어올 경우
 디자인이 강제로 중복될 수 있으므로 개별 아이디 및 클래스를 사용해서
 선택자를 만들고 디자인한다. */
+/* swiper-slide 반응형 설계를 할 경우 */
+/* swiper-slide 자체가 가변형 기능을 내장하고 있기 때문에
+가장 바깥쪽 swiper 영역 틀 기준으로 가변 크기를 넣어주면 자동으로 
+반응형에 맞춰지는 슬라이드가 완성된다.*/
 main #pawin_slide {
-    width:1160px; height:650px; 
+    max-width:1160px; height:650px; 
     background:lightsalmon;
+    z-index:0;
 }
 main #pawin_slide .swiper-wrapper {}
 main #pawin_slide .swiper-wrapper .swiper-slide {}
 main #pawin_slide .swiper-wrapper .slide1 {
-    background:url(https://picsum.photos/id/111/1160);
+    background:url(../images/pawin_slide_desktop.jpg) center;
 }
 main #pawin_slide .swiper-wrapper .slide2 {
     background:url(https://picsum.photos/id/70/1160);
@@ -62,11 +68,16 @@ main #pawin_slide .swiper-button-prev,
 main #pawin_slide .swiper-button-next {
     width:40px; height:40px;
 }
-main #pawin_slide .swiper-button-prev {background:url(../images/prev.png) no-repeat;}
-main #pawin_slide .swiper-button-next {background:url(../images/next.png) no-repeat;}
+/* swiper-slide prev, next 기본 css (position:absolute) 내장 */
+/* 위치를 움직이고 싶다면 position 속성 추가 작성 없이 방향값 추가 */
+main #pawin_slide .swiper-button-prev {background:url(../images/prev.png) no-repeat; left:20px; background-size:100%;}
+main #pawin_slide .swiper-button-next {background:url(../images/next.png) no-repeat; right:20px; background-size:100%;}
 /* swiper-slide라이브러리에서 기본제공하는 이전, 다음 숨기기 */
 main #pawin_slide .swiper-button-prev::after,
 main #pawin_slide .swiper-button-next::after {display:none;}
+
+
+
 /* 복습용 슬라이드 */
 main #my_slide {
     width:1160px; height:300px; background:lightskyblue;

@@ -6,6 +6,7 @@ width 값 기준으로 설정해서 자연스러운 반응형 웹을 설계한�
 @media screen and (max-width:1160px) {
     /* 1160px 이하 */
     header {width:calc(100% - 30px);}
+    /* main #pawin_slide {width:calc(100% - 30px);} */
 }/* 1160 end */
 @media screen and (max-width:900px) {
     header nav ul {display:none;}
@@ -22,5 +23,11 @@ width 값 기준으로 설정해서 자연스러운 반응형 웹을 설계한�
     header nav .m_nav span:nth-child(2) {}
     header nav .m_nav span:nth-child(3) {}
     header .m_nav_open {display:block;}
+    /* pawin_slide */
+    /* 반응형웹의 슬라이드는 높이 고정 슬라이드의 경우 데스크탑, 모바일용의 이미지를 따로 제작하고
+    @media 모바일 조건에서 m이미지로 변경하는 경로를 작성한다. */
+    main #pawin_slide .swiper-wrapper .slide1 {
+        background:url(../images/pawin_slide_m.jpg) center;
+    }
 }/* 900 end */
 
