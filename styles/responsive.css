@@ -7,6 +7,13 @@ width 값 기준으로 설정해서 자연스러운 반응형 웹을 설계한�
     /* 1160px 이하 */
     header {width:calc(100% - 30px);}
     /* main #pawin_slide {width:calc(100% - 30px);} */
+    
+    main #pawin_slide2 .swiper-wrapper {}
+    main #pawin_slide2 .swiper-wrapper .swiper-slide {}
+    main #pawin_slide2 .swiper-wrapper .swiper-slide img {
+        
+    }
+    main #pawin_slide2 .swiper-wrapper .slide1 {}
 }/* 1160 end */
 @media screen and (max-width:900px) {
     header nav ul {display:none;}
